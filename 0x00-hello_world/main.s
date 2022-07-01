@@ -1,28 +1,30 @@
 	.file	"main.c"
 	.intel_syntax noprefix
 	.text
-	.section	.rodata.str1.1,"aMS",@progbits,1
+	.section	.rodata
 .LC0:
 	.string	"Holberton School"
 	.text
 	.globl	main
 	.type	main, @function
 main:
-.LFB23:
+.LFB0:
 	.cfi_startproc
 	endbr64
-	sub	rsp, 8
+	push	rbp
 	.cfi_def_cfa_offset 16
-	lea	rsi, .LC0[rip]
-	mov	edi, 1
+	.cfi_offset 6, -16
+	mov	rbp, rsp
+	.cfi_def_cfa_register 6
+	lea	rdi, .LC0[rip]
 	mov	eax, 0
-	call	__printf_chk@PLT
+	call	printf@PLT
 	mov	eax, 0
-	add	rsp, 8
-	.cfi_def_cfa_offset 8
+	pop	rbp
+	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc
-.LFE23:
+.LFE0:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
 	.section	.note.GNU-stack,"",@progbits

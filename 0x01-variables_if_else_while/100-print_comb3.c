@@ -16,7 +16,7 @@ while (a < 100)
 {
 	b = a % 10;
 	c = a / 10;
-	
+
 if (c < b)
 {
 putchar(c + '0');

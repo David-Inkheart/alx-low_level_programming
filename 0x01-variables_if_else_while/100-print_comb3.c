@@ -12,26 +12,26 @@ int main(void)
 
 	a = 0;
 
-while (a < 100)
+	while (a < 100)
 {
 	b = a % 10;
 	c = a / 10;
 
-if (c < b)
+	if (c < b)
 {
-putchar(c + '0');
-putchar(b + '0');
+	putchar(c + '0');
+	putchar(b + '0');
 
-if (a < 89)
+	if (a < 89)
 {
-putchar(44);
-putchar(32);
+	putchar(',');
+	putchar(' ');
 }
 }
 
 	a++;
 }
-putchar('\n');
+	putchar('\n');
 
-return (0);
+	return (0);
 }

@@ -6,7 +6,7 @@
  * The printout is followed by a newline
  * Return: Always 0 (Success)
  */
-int main(void)
+void print_alphabet(void)
 {
 	int ch = 'a';
 
@@ -19,5 +19,5 @@ int main(void)
 	_putchar('\n');
 }
 
-	return (0);
+	return;
 }

@@ -1,8 +1,9 @@
 #include "main.h"
 /**
  * _islower - checks for lowercase character c
- * Description: 'int c - a random letter from 'a' to 'z''
- * Return: Always 0 (Success)
+ *@c: The character to print
+ * int c - a random letter from 'a' to 'z''
+ * Return: 1 if character is lowercase, 0 if not.
  */
 int _islower(int c)
 {

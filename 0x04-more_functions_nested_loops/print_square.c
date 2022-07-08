@@ -10,14 +10,22 @@ int main(void)
 {
 	int r, c;
 
-	for (r = 1; r <= n; r++)
+	if (n <= 0)
 	{
-		for (c = 1; c <= n; c++)
-		{
-		_putchar('#');
-		}
 		_putchar('\n');
 	}
-	_putchar('\n');
+	else
+	{
+	{
+
+		for (r = 1; r <= n; r++)
+		{
+			for (c = 1; c <= n; c++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+	}
+
 	return (0);
 }

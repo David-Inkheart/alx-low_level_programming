@@ -7,7 +7,7 @@
  * Description: 'This program prints a given size of triangle'
  *
  * @size: The size of the triangle.
- * Return: void
+ *
  */
 void print_triangle(int size)
 {
@@ -21,15 +21,16 @@ void print_triangle(int size)
 	{
 		for (r = 1; r <= size; r++)
 		{
-		for (s = r; s < size; s++)
-		{
-		_putchar(' ');
-		}
-		for (c = 1; c <= r; c++)
-		{
-		 _putchar('#');
-		}
-	_putchar('\n');
+			for (s = r; s < size; s++)
+			{
+				_putchar(' ');
+			}
+				for (c = 1; c <= r; c++)
+				{
+					_putchar('#');
+				}
+		_putchar('\n');
 		}
 	}
+
 }

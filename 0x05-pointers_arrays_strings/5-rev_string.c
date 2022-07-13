@@ -9,23 +9,27 @@
 */
 void rev_string(char *s)
 {
-	int i, n = strlen(s);
-	char *b, *e, temp;
+	int i, j, k, t;
 
-	b = s;
-	e = s;
-
-	for (i = 0; i < n - 1; i++)
+/* this next function is to get the length of the string */
+	i = 0;
+	while (s[i] != '\0')
 	{
-	e++;
+	i++;
 	}
-	for (i = 0; i < n / 2; i++)
-	{
-	temp = *e;
-	*e = *b;
-	*b = temp;
 
-	b++;
-	e--;
+/* j is inistialized as the last character in the string 's' */
+	j = i - 1;
+	k = 0;
+
+/* k has been initialized to 0 and will loop till j for the string 's' */
+	while (k < j)
+	{
+	t = s[k];	/* a temp variable now holds the string 's' */
+	s[k] = s[j];
+	s[j] = t;
+
+	k++;
+	j--;
 	}
 }

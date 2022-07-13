@@ -15,13 +15,25 @@
 */
 void puts_half(char *str)
 {
-	int i, l;
+	int i, j, l, n;
 
-	l = strlen(str);
+/* length of the string */
 
-	for (i = (l / 2); str[i] != '\0'; i++)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+	i++;
+	}
+	l = i - 1;
+/* divides the length into halves */
+
+	n = (l / 2);
+
+/* prints the second half of the string */
+
+	for (j = n + 1; j <= l; j++)
+	{
+	_putchar(str[j]);
 	}
 	_putchar('\n');
 }

@@ -15,13 +15,17 @@
 */
 char *_strcat(char *dest, char *src)
 {
+/* declaration of character. size_t is a character type. */
+
 	size_t i, n = strlen(src);
 	size_t l = strlen(dest);
 
+/* using i - 'index positions' to loop through the size of src */
 	for (i = 0; i <= n; i++)
 	{
 	dest[l + i] = src[i];
 
+/* size of src with its string has been appended to dest */
 	}
 	return (dest);
 }

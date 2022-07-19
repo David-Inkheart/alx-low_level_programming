@@ -15,6 +15,10 @@ char *_strstr(char *haystack, char *needle)
 	{
 	while (*haystack != 0)
 	{
+		if ((strlen(needle)) == 0)
+		{
+			return (haystack);
+		}
 		if ((*haystack == *needle) &&
 				(strncmp(haystack, needle, strlen(needle)) == 0))
 			return (haystack);

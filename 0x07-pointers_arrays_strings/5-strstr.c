@@ -11,19 +11,39 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	if (*haystack != '\0' && *needle != '\0')
+	char *h;
+	char *n;
+
+/* First scan quickly through the two strings looking for a single-character */
+/* match.  When it's found, then compare the rest of the substring. */
+
+	n = needle;
+
+	if (*n == 0)
 	{
-	while (*haystack != 0)
-	{
-		if ((strlen(needle)) == 0)
-		{
-			return (haystack);
-		}
-		if ((*haystack == *needle) &&
-				(strncmp(haystack, needle, strlen(needle)) == 0))
-			return (haystack);
-		haystack++;
+		return (haystack);
 	}
+	for ( ; *haystack != 0; haystack += 1)
+	{
+		if (*haystack != *n)
+		{
+			continue;
+		}
+
+		h = haystack;
+
+		while (1)
+		{
+			if (*n == 0)
+			{
+				return (haystack);
+			}
+			if (*h++ != *n++)
+			{
+				break;
+			}
+		}
+		n = needle;
 	}
 	return (NULL);
 }

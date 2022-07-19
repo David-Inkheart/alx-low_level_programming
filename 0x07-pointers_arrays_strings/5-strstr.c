@@ -11,12 +11,15 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
+	if (*haystack != '\0' && *needle != '\0')
+	{
 	while (*haystack != 0)
 	{
 		if ((*haystack == *needle) &&
 				(strncmp(haystack, needle, strlen(needle)) == 0))
 			return (haystack);
 		haystack++;
+	}
 	}
 	return (NULL);
 }

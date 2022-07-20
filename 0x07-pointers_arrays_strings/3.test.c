@@ -10,17 +10,21 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
-	char *p;
+	unsigned int i, len, j;
 
-	for (i = 0; *s; s++, i++)
+	len = 0;
+
+	for (i = 0; s[i] != ','; i++)
 	{
-/* for the elements of string p ALONE and nothing found in s */
-		for (p = accept; *p && *p != *s; p++)
-			;
-/* then to check if dereferenced p (string at accept) is no longer seen */
-		if (*p == '\0') /* also same as (!*p) */
-			break;
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				len++;
+			if (s[i] != accept[j])
+				break;
+			}
+		}
 	}
-	return (i);
+	return (len);
 }

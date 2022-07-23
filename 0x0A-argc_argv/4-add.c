@@ -16,22 +16,23 @@
  */
 int main(int argc, char *argv[])
 {
-	int count, sum = 0;
-
-	if (argc < 1)
-		return (0);
+	int count, digit, sum = 0;
 
 	for (count = 1; count < argc; count++)
 	{
-		if (!atoi(argv[count]))
+		for (digit = 0; argv[count][digit]; digit++)
 		{
-			printf("%s\n", "Error");
-			return (1);
+			if (argv[count][digit] < '0' || argv[count][digit] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
+
 		sum += atoi(argv[count]);
 	}
+
 	printf("%d\n", sum);
 
 	return (0);
 }
-

@@ -10,23 +10,25 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i, n = strlen(str) + 1;
+	unsigned int i, n;
 	char *s;
 	char *d;
 
-	d = malloc(sizeof(char) * (n + 1));
-	if (str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
+
+	n = strlen(str) + 1;
+	d = malloc(sizeof(char) * n);
 /* Using the concept of pointer to a pointer to point to a whole string */
 	s = str;
 
 	for (i = 0; i <= n; i++)
 	{
-		if (str == NULL)
+		if (d == NULL)
 		{
-			printf("Can't alo %lu byte (after %u)\n", (sizeof(char) * (n + 1)), i);
+			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * n), i);
 			return (NULL);
 		}
 /* str points only to the address of the first byte */

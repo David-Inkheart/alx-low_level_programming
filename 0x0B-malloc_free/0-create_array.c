@@ -20,6 +20,10 @@ char *create_array(unsigned int size, char c)
 
 	str = malloc(sizeof(char) * a);
 
+	if (size == 0)
+	{
+		return (NULL);
+
 	for (i = 0; i < size; i++)
 	{
 		if (str == NULL)
@@ -27,11 +31,12 @@ char *create_array(unsigned int size, char c)
 			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * a), i);
 			return (NULL);
 		}
-		if (size == 0)
-		{
-			printf("failed to allocate memory\n");
-			return (NULL);
-		}
+/*		if (size == 0) */
+/*		{ */
+/*			printf("failed to allocate memory\n"); */
+/*			return (NULL); */
+/*		} */
+	}
 
 		str[i] = c;
 	}

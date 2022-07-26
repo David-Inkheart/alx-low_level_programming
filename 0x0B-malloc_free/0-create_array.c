@@ -22,17 +22,16 @@ char *create_array(unsigned int size, char c)
 
 	for (i = 0; i < size; i++)
 	{
-	/*	str = malloc(sizeof(char) * a); */
-
 		if (str == NULL)
 		{
 			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * a), i);
 			return (NULL);
 		}
-/*		if (size == 0) */
-/*		{ */
-/*			return (NULL); */
-/*		} */
+		if (size == 0)
+		{
+			printf("failed to allocate memory\n");
+			return (NULL);
+		}
 
 		str[i] = c;
 	}

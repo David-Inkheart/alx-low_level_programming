@@ -13,31 +13,31 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, n, m, l;
+	unsigned int i, n, m, l, j;
 	char *s, *p1, *p2;
 
-
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
 	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+	j =  (strlen(s1) || strlen(s2)) + 1;
 	n = strlen(s1) + 1;
-	s = malloc(sizeof(char) * n);
-/* Using the concept of pointer to a pointer to point to a whole string */
+	s = malloc(sizeof(char) * j);
 	p1 = s1;
 
 	for (i = 0; i <= n; i++)
 	{
 		if (s == NULL)
 		{
-			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * n), i);
+			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * j), i);
 			return (NULL);
 		}
-/* s1 points only to the address of the first byte */
 		s[i] = p1[i];
 	}
-/* first, s1 was duplicated to s in a new memory location */
-	/* now s2 will be concatenated to s */
 	p2 = s2;
 	m = strlen(s2);
 	l = strlen(s);
@@ -46,14 +46,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		if (s == NULL)
 		{
-			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * n), i);
+			printf("Can't allocate %lu byte (after %u calls)\n", (sizeof(char) * n), j);
 			return (NULL);
 		}
 	s[l + i] = p2[i];
-/* note that the index loop stops before the NULL character */
-/*	s[n + i] = '\0'; */
-
-/* size of src with its string has been appended to dest */
 	}
 	return (s);
 	free(s);

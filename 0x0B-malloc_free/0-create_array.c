@@ -13,14 +13,20 @@
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
+	unsigned int a;
+	char *str;
 
-	char *str = malloc(sizeof(char) * size);
+	a = size;
+
+	str = malloc(sizeof(str) * a);
 
 
 	for (i = 0; i < size; i++)
 	{
 		if (size == 0)
 		{
+			/* return (NULL); */
+			printf("Can't allocate %lu bytes (after %u calls)\n", (sizeof(str) * a), i);
 			return (NULL);
 		}
 

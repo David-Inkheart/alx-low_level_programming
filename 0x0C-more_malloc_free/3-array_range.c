@@ -41,9 +41,9 @@ int *array_range(int min, int max)
 	}
 
 
-/*	if (ptr[0] == min && ptr[l - 1] == max)
+/*	if (ptr[0] == min && ptr[l - 1] == max) */
 
-	ptr = array_range(min, max); */
+/*	ptr = array_range(min, max); */
 
 	return (ptr);
 }

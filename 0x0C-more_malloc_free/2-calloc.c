@@ -13,7 +13,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *str;
+	char *str;
 	unsigned int i;
 
 
@@ -30,10 +30,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		free(str);
 	}
 
-	for (i = 0; i < nmemb; i++)
-		*str = 0;
-/*	for (i = 0; i < (size * nmemb); i++) */
-/*	str[i] = '\0'; */
+	for (i = 0; i < (size * nmemb); i++)
+	{
+		str[i] = 0;
+	}
 
 	return (str);
 }

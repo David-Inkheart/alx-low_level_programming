@@ -30,35 +30,28 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
+
 	l = strlen(s1) + n + 1;
 	ptr = malloc(l * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+
 	for (i = 0; s1[i] != '\0'; i++)
 	{
-		if (ptr == NULL)
-		{
-			printf("Can't allocate bytes (after %u calls)\n", i);
-			return (NULL);
-			free(ptr);
-		}
 		ptr[i] = s1[i];
 	}
 	m = strlen(s2);
 	j = strlen(ptr);
+
 	if (n >= m)
+		n = m;
+
+	for (i = 0; i < n; i++)
 	{
-		for (i = 0; i <= m; i++)
-		{
-			ptr[j + i] = s2[i];
-		}
-	}
-	else if (n < m)
-	{
-		for (i = 0; i < n; i++)
-		{
-			ptr[j + i] = s2[i];
-		}
+		ptr[j + i] = s2[i];
 	}
 
 	ptr[l] = '\0';
+
 	return (ptr);
 }

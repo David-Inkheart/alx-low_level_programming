@@ -26,17 +26,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s1 = "";
 	}
-	if (s1 == NULL)
+	if (s2 == NULL)
 	{
 		s2 = "";
 	}
 	l = strlen(s1) + n + 1;
 	ptr = malloc(l * sizeof(char));
-
 	for (i = 0; s1[i] != '\0'; i++)
 	{
 		if (ptr == NULL)
 		{
+			printf("Can't allocate bytes (after %u calls)\n", i);
 			return (NULL);
 			free(ptr);
 		}

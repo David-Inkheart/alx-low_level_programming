@@ -32,7 +32,7 @@
 
 * *Print a new line at the end of your function*
 
-## 3. To be is a to be the value of a variable
+## 3. To be is a list, is to be the value of a variable
 
 ### Write a function that prints anything.
 

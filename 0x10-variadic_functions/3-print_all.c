@@ -12,10 +12,10 @@ void print_all(const char * const format, ...)
 	char *sep = ", ";
 
 	va_start(args, format);
-	while (format[i])
+	while (format && format[i])
 		i++;
 
-	while (format[num])
+	while (format && format[num])
 	{
 		if (num == i - 1)
 			sep = "";
@@ -37,8 +37,6 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 				}
 				printf("%s%s", str, sep);
-				break;
-			default:
 				break;
 		}
 		num++;

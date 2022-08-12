@@ -27,6 +27,6 @@ main:
           syscall                ; invoke operating system to exit
 
           section   .data
-message:  db        "Hello, Holberton",10,0 ; don't forget to terminate
+message:  db        "Hello, Holberton",10 ;0, don't forget to terminate
 ;  fmti:  db        "%d",10,0    ; format for printing int
    fmts:  db        "%s",0       ; format fpr printing string

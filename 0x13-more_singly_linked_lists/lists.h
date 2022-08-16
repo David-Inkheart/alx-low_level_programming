@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 /**
- * struct list_s - singly liked list
+ * struct listint_s - singly liked list
  * @n: integer
  * @next: points to the next node
  *

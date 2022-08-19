@@ -1,5 +1,5 @@
 #include "main.h"
-int countSetBits(int num);
+
 /**
  * flip_bits - function that returns the number of bits you would
  * need to flip to get from one number to another
@@ -10,25 +10,16 @@ int countSetBits(int num);
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-/* Return count of set bits in n XOR m */
-	return (countSetBits(n ^ m));
-}
+	unsigned int count = 0;
 
-/**
- * countSetBits - Function that count set bits
- * @num: number of set bits
- *
- * Return: count of number of bits
- */
-
-int countSetBits(int num)
-{
-	int count = 0;
-
-	while (num > 0)
+	while (n != 0 || m != 0)
 	{
-		count++;
-		num &= (num - 1);
+		if ((n & 1) != (m & 1))
+			count++;
+		m = m >> 1;
+		n = n >> 1;
 	}
+
 	return (count);
 }
+

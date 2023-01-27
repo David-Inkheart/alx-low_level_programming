@@ -10,23 +10,22 @@
  *
  * Return: first index where value is located, Else -1
  */
-
 int linear_search(int *array, size_t size, int value)
 {
-	size_t index = 0;
+	size_t i;
+
 
 	if (!array)
 		return (-1);
 
-	while (index < size)
+	for (i = 0; i < size; i++)
 	{
-		printf("Value checked array[%i] = [%i]\n", (int)index, array[index]);
+		printf("Value checked array[%i] = [%i]\n", (int)i, array[i]);
 
-		if (array[index] == value)
+		if (array[i] == value)
 		{
-			return (index);
+			return (i);
 		}
-		index++;
 	}
 	return (-1);
 }

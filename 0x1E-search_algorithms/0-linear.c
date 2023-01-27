@@ -8,25 +8,25 @@
  * @size: - number of elements in array
  * @value: - function returns the first index where value is located
  *
- * Return: Always EXIT_SUCCESS
+ * Return: first index where value is located, Else -1
  */
 
 int linear_search(int *array, size_t size, int value)
 {
-	size_t i;
+	size_t index = 0;
 
 	if (!array)
 		return (-1);
 
-	for (i = 0; i < size; i++)
+	while (index < size)
 	{
-		printf("value checked array[%ld] = [%d]\n", i, array[i]);
+		printf("Value checked array[%i] = [%i]\n", (int)index, array[index]);
 
-		if (array[i] == value)
+		if (array[index] == value)
 		{
-			return (i);
+			return (index);
 		}
-
+		index++;
 	}
 	return (-1);
 }
